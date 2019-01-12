@@ -1,3 +1,21 @@
-<p>
-  renovation-item-detail works!
-</p>
+<div *ngIf="renovationItem">
+  <h2>{{renovationItem.name}} Details</h2>
+  <div><span>id: </span>{{renovationItem.id}}</div>
+  <div><span>name: </span>{{renovationItem.name | uppercase}}</div>
+  <div><span>dateChanged: </span>{{renovationItem.dateChanged | date:"dd.MM.yyyy"}}</div>
+  <div><span>cost: </span>{{renovationItem.cost}}</div>
+  <div><span>estimatedCost: </span>{{renovationItem.estimatedCost}}</div>
+  <div><span>description: </span>{{renovationItem.description}}</div>
+  <div><span>status: </span>{{statusType[renovationItem.status]}}</div>
+
+  <div>
+    <label>name: 
+      <input [(ngModel)]="renovationItem.name" placeholder="name">
+    </label>
+  </div>
+  <div>
+    <label>description:
+      <input [(ngModel)]="renovationItem.description" placeholder="description">
+    </label>
+  </div>
+</div>

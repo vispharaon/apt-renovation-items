@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RenovationItem } from '../renovationitem';
-import { StatusType } from '../status-type.enum';
-import { RENOVATIONITEMS } from '../mock-renovationitems';
+import { RenovationitemService } from '../renovationitem.service';
 
 @Component({
   selector: 'app-renovationitem',
@@ -9,25 +8,20 @@ import { RENOVATIONITEMS } from '../mock-renovationitems';
   styleUrls: ['./renovationitem.component.css']
 })
 export class RenovationitemComponent implements OnInit {
-  renovationItems = RENOVATIONITEMS;
+  renovationItems: RenovationItem[];
 
   selectedRenovationItem: RenovationItem;
 
-  renovationItem: RenovationItem = {
-    id: 1,
-    name: 'Windows - living room',
-    dateChanged: new Date(2018, 6, 1),
-    cost: 2000.0,
-    estimatedCost: 2500.0,
-    description: 'New white windows with triple glass. Changed old wood for plastic.',
-    status: 2
-  };
-
-  statusType = StatusType;
-
-  constructor() { }
+  constructor(private renovationItemService: RenovationitemService) {}
 
   ngOnInit() {
+    this.getRenovationItems();
+  }
+
+  getRenovationItems(): void{
+    this.renovationItemService
+        .getRenovationItems()
+        .subscribe(renovationItems => this.renovationItems = renovationItems);
   }
 
   onSelect(renovationItem: RenovationItem): void{

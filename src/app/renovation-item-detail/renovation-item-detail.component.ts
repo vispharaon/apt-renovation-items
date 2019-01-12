@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { RenovationItem } from '../renovationitem';
+import { StatusType } from '../status-type.enum';
 
 @Component({
   selector: 'app-renovation-item-detail',
@@ -7,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RenovationItemDetailComponent implements OnInit {
 
+  @Input() renovationItem: RenovationItem;
+
+  statusType = StatusType;
+  
   constructor() { }
 
   ngOnInit() {
