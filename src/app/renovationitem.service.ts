@@ -13,4 +13,8 @@ export class RenovationitemService {
   getRenovationItems(): Observable<RenovationItem[]> {
     return of(RENOVATIONITEMS);
   }
+
+  getRenovationItem(id: number): Observable<RenovationItem>{
+    return of(RENOVATIONITEMS.find(x => x.id===id));
+  }
 }

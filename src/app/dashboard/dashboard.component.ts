@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { RenovationItem } from '../renovationitem';
 import { RenovationitemService } from '../renovationitem.service';
 
@@ -18,6 +19,6 @@ export class DashboardComponent implements OnInit {
 
   getRenovationItems(){
     this.renovationItemService.getRenovationItems()
-          .subscribe(renovationItems => this.renovationItems = renovationItems.slice(1,2));
+          .subscribe(renovationItems => this.renovationItems = renovationItems.slice(0,3));
   }
 }

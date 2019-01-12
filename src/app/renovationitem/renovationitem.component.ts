@@ -10,8 +10,6 @@ import { RenovationitemService } from '../renovationitem.service';
 export class RenovationitemComponent implements OnInit {
   renovationItems: RenovationItem[];
 
-  selectedRenovationItem: RenovationItem;
-
   constructor(private renovationItemService: RenovationitemService) {}
 
   ngOnInit() {
@@ -22,9 +20,5 @@ export class RenovationitemComponent implements OnInit {
     this.renovationItemService
         .getRenovationItems()
         .subscribe(renovationItems => this.renovationItems = renovationItems);
-  }
-
-  onSelect(renovationItem: RenovationItem): void{
-    this.selectedRenovationItem = renovationItem;    
   }
 }

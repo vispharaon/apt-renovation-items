@@ -1,10 +1,8 @@
 <h2>My Apartment Renovation Items</h2>
 <ul class="renovationItems">
-  <li *ngFor="let renovationItem of renovationItems" 
-      [class.selected]="renovationItem === selectedRenovationItem"
-      (click)="onSelect(renovationItem)">
-    <span class="badge">{{renovationItem.id}}</span> {{renovationItem.name}}
+  <li *ngFor="let renovationItem of renovationItems">
+    <a routerLink="/detail/{{renovationItem.id}}">
+      <span class="badge">{{renovationItem.id}}</span> {{renovationItem.name}}
+    </a>
   </li>
 </ul>
-
-<app-renovation-item-detail [renovationItem]="selectedRenovationItem"></app-renovation-item-detail>
