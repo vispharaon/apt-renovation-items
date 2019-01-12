@@ -36,4 +36,10 @@ export class RenovationitemComponent implements OnInit {
     this.renovationItemService.addRenovationItem(renovationItem)
                               .subscribe(renovationItem => this.renovationItems.push(renovationItem));
   }
+
+  delete(renovationItem: RenovationItem): void{
+    this.renovationItems = this.renovationItems.filter(ri => ri != renovationItem);
+    this.renovationItemService.deleteRenovationItem(renovationItem.id)
+                              .subscribe();
+  }
 }

@@ -60,4 +60,13 @@ export class RenovationitemService {
                       catchError(this.handleError<RenovationItem>('addRenovationItem'))
                     );
   }
+
+  deleteRenovationItem(renovationItemId: number): Observable<any>{
+    const url = `${this.renovationItemsUrl}/${renovationItemId}`
+    return this.http.delete<RenovationItem>(url, httpOptions)
+                    .pipe(
+                      tap(_ => console.log(`deleted renovation item with id: ${renovationItemId}`)),
+                      catchError(this.handleError<RenovationItem>('deleteRenovationItem'))
+                    );
+  }
 }

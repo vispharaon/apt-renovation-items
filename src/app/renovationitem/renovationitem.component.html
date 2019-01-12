@@ -26,5 +26,7 @@
     <a routerLink="/detail/{{renovationItem.id}}">
       <span class="badge">{{renovationItem.id}}</span> {{renovationItem.name}}
     </a>
+    <button class="delete" title="delete renovation item"
+            (click)="delete(renovationItem)">x</button>
   </li>
 </ul>
