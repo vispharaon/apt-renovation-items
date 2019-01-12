@@ -52,4 +52,12 @@ export class RenovationitemService {
                       catchError(this.handleError<any>('updateRenovationItem'))
                     );
   }
+
+  addRenovationItem(renovationItem: RenovationItem): Observable<RenovationItem>{
+    return this.http.post<RenovationItem>(this.renovationItemsUrl, renovationItem, httpOptions)
+                    .pipe(
+                      tap((renovationItem: RenovationItem) => console.log(`posted new renovation item: ${renovationItem.name} - id: ${renovationItem.id}`)),
+                      catchError(this.handleError<RenovationItem>('addRenovationItem'))
+                    );
+  }
 }

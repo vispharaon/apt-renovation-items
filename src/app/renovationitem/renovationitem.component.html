@@ -1,4 +1,26 @@
 <h2>My Apartment Renovation Items</h2>
+<div>
+  <label>Renovation item name:
+    <input #renovationItemName />
+  </label>
+  <label>Renovation item Estimated cost
+      <input #renovationItemEstimatedCost type="number" />
+  </label>
+  <label>Renovation item description
+      <input #renovationItemDescription />
+  </label>
+  <!-- (click) passes input value to the add() method and clears the input -->
+  <!-- <button (click)="add(renovationItemName.value, 
+                         renovationItemEstimatedCost.value, 
+                         renovationItemDescription.value); 
+                       renovationItemName.value='';
+                       renovationItemEstimatedCost='0';
+                       renovationItemDescription='' "> -->
+  <button (click)="add(renovationItemName.value); 
+                     renovationItemName.value=''">
+    add
+  </button>
+</div>
 <ul class="renovationItems">
   <li *ngFor="let renovationItem of renovationItems">
     <a routerLink="/detail/{{renovationItem.id}}">

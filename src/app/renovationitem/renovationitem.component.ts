@@ -21,4 +21,19 @@ export class RenovationitemComponent implements OnInit {
         .getRenovationItems()
         .subscribe(renovationItems => this.renovationItems = renovationItems);
   }
+
+  add(name: string): void{
+    name = name.trim();
+    if(!name) {return;}
+    let renovationItem = new RenovationItem();
+    renovationItem.name = name;
+    renovationItem.dateChanged =  new Date();
+    renovationItem.estimatedCost = 0;
+    renovationItem.cost = 0;
+    renovationItem.description = "-";
+    renovationItem.status = 0;
+
+    this.renovationItemService.addRenovationItem(renovationItem)
+                              .subscribe(renovationItem => this.renovationItems.push(renovationItem));
+  }
 }
