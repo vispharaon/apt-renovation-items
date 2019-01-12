@@ -35,4 +35,9 @@ export class RenovationItemDetailComponent implements OnInit {
   goBack(): void{
     this.location.back();
   }
+
+  save(): void{
+    this.renovationItemService.updateRenovationItem(this.renovationItem)
+                              .subscribe(() => this.goBack());
+  }
 }
