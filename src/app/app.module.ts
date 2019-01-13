@@ -10,21 +10,43 @@ import { RenovationItemDetailComponent } from './renovation-item-detail/renovati
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RenovationitemSearchComponent } from './renovationitem-search/renovationitem-search.component';
 
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { FacebookLoginProvider } from 'angularx-social-login';
+import { SigninComponent } from './signin/signin.component';
+
+let config = new AuthServiceConfig([
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('2018097774947187')
+  }
+]);
+
+export function provideConfig(){
+  return config;
+}
+
 @NgModule({
   declarations: [
     AppComponent,
     RenovationitemComponent,
     RenovationItemDetailComponent,
     DashboardComponent,
-    RenovationitemSearchComponent
+    RenovationitemSearchComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

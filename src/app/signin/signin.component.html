@@ -1,0 +1,14 @@
+<br>
+<div *ngIf="user">
+  <img src="{{ user.photoUrl }}">
+  <div>
+    <h4>{{user.name}}</h4>
+    <p>{{user.email}}</p>
+  </div>
+  <div>
+    <button (click)="signOut()">sign out</button>
+  </div>
+</div>
+<div *ngIf="!user">
+  <button (click)="signInWithFacebook()">sign in</button>
+</div>
