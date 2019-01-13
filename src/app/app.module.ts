@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { RenovationitemComponent } from './renovationitem/renovationitem.component';
 import { RenovationItemDetailComponent } from './renovation-item-detail/renovation-item-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RenovationitemSearchComponent } from './renovationitem-search/renovationitem-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RenovationitemComponent,
     RenovationItemDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    RenovationitemSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,6 @@ export class DashboardComponent implements OnInit {
 
   getRenovationItems(){
     this.renovationItemService.getRenovationItems()
-          .subscribe(renovationItems => this.renovationItems = renovationItems.slice(0,3));
+          .subscribe(renovationItems => this.renovationItems = renovationItems.slice(0,4));
   }
 }

@@ -69,4 +69,17 @@ export class RenovationitemService {
                       catchError(this.handleError<RenovationItem>('deleteRenovationItem'))
                     );
   }
+
+  searchRenovationItems(term: string): Observable<RenovationItem[]>{
+    if(!term.trim()){
+      return of([]);
+    }
+
+    const url = `${this.renovationItemsUrl}?name=${term}`;
+    return this.http.get<RenovationItem[]>(url)
+                    .pipe(
+                      tap(_ => console.log(`search on term: ${term}`)),
+                      catchError(this.handleError<RenovationItem[]>('searchRenovationItems', []))
+                    );
+  }
 }
