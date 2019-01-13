@@ -6,6 +6,8 @@ import { RenovationItem } from '../renovationitem';
 import { RenovationitemService } from '../renovationitem.service';
 import { StatusType } from '../status-type.enum';
 
+import { saveAs } from 'file-saver';
+
 @Component({
   selector: 'app-renovation-item-detail',
   templateUrl: './renovation-item-detail.component.html',
@@ -39,5 +41,12 @@ export class RenovationItemDetailComponent implements OnInit {
   save(): void{
     this.renovationItemService.updateRenovationItem(this.renovationItem)
                               .subscribe(() => this.goBack());
+  }
+
+  saveInFile(): void {
+    const filename = `${this.renovationItem.name.split(' ')[0]}.json`;
+    const blob = new Blob([JSON.stringify(this.renovationItem)], {type: "text/plain;charset=utf-8"});
+    console.log(filename, blob);
+    saveAs(blob, filename);
   }
 }
