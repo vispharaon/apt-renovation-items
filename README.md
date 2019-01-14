@@ -21,7 +21,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 
 ## Facebook test users
-To test facebook sign in functionality please use these test accounts:
-email: vsyddtofdk_1547452844@tfbnw.net ; password: MadisonMadison
-email: mgyqujptqs_1547452849@tfbnw.net ; password: BarbaraBarbara
-email: sjcoyfkybb_1547452846@tfbnw.net ; password: WillWill
+To test facebook sign in functionality please use these test accounts: 
+# email: vsyddtofdk_1547452844@tfbnw.net ; password: MadisonMadison
+# email: mgyqujptqs_1547452849@tfbnw.net ; password: BarbaraBarbara
+# email: sjcoyfkybb_1547452846@tfbnw.net ; password: WillWill
