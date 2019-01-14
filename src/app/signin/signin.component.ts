@@ -18,6 +18,7 @@ export class SigninComponent implements OnInit {
   ngOnInit() {
     this.authService.authState.subscribe((user) =>
     {
+      console.log(user);
       this.user = user;
       this.loggedIn = (user != null)
     });
