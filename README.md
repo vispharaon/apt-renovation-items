@@ -8,6 +8,8 @@ To prepare environment to test application locally first install Node.js and npm
 To be able to test the application first download project from git. Project can be cloned or downloaded by using this link: https://github.com/vispharaon/apt-renovation-items.git
 After project is placed locally it can be started with Development server (explained in section ## Development server)
 Additionally, project can be opened for review in some IDE, f.i. Visual Studio Code.
+Note: If you don't have @angular/cli installed globally application won't run. In this case please run this command first:
+`npm install -g @angular/cli`
 
 ## Development server
 
